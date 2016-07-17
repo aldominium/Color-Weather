@@ -6,16 +6,19 @@
     android:id="@+id/activity_daily_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aldominium.colorweather.DailyWeatherActivity">
+    tools:context="com.aldominium.colorweather.DailyWeatherActivity"
+    android:background="#00D2FF">
 
     <TextView
+        style="@style/mainFont"
         android:text="Daily Forecast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:id="@+id/dailyWeatherTitleTextView"/>
+        android:id="@+id/dailyWeatherTitleTextView"
+        android:textStyle="normal|bold"/>
 
     <ListView
         android:layout_width="match_parent"
