@@ -11,7 +11,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="Daily Forecast"
+        android:text="@string/hourly_forecast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

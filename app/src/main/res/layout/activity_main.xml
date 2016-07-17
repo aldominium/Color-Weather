@@ -98,7 +98,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="Daily"
+        android:text="@string/daily_button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
@@ -115,7 +115,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="Hourly"
+        android:text="@string/hourly_button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
@@ -132,7 +132,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="Minutely"
+        android:text="@string/minutely_button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
