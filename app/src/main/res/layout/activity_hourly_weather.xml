@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hourly_weather"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aldominium.colorweather.HourlyWeatherActivity"
+    android:background="#00D2FF">
+
+    <TextView
+        style="@style/mainFont"
+        android:text="Daily Forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:id="@+id/HourlyWeatherTitleTextView"
+        android:textStyle="normal|bold"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/HourlyWeatherTitleTextView"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
