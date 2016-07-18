@@ -6,16 +6,19 @@
     android:id="@+id/activity_minutely_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aldominium.colorweather.MinutelyWeatherActivity">
+    tools:context="com.aldominium.colorweather.MinutelyWeatherActivity"
+    android:background="#00D2FF">
 
     <TextView
-        android:text="TextView"
+        style="@style/mainFont"
+        android:text="@string/minutely_weather_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:id="@+id/MinutelyWeatherTitleTextView"/>
+        android:id="@+id/MinutelyWeatherTitleTextView"
+        android:textStyle="normal|bold"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

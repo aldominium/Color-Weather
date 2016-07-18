@@ -5,4 +5,5 @@
     <string name="daily_button_text">Daily</string>
     <string name="hourly_button_text">Hourly</string>
     <string name="minutely_button_text">Minutely</string>
+    <string name="minutely_weather_title">Minutely Forecast</string>
 </resources>
