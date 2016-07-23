@@ -1,6 +1,7 @@
 package com.aldominium.colorweather;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +23,12 @@ public class MainActivity extends Activity {
         dailyWeatherTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG,"Click en daily Text View");
+
+                Intent dailyActivityIntent = new Intent(MainActivity.this,DailyWeatherActivity.class);
+
+                startActivity(dailyActivityIntent);
+
+
             }
         });
 
