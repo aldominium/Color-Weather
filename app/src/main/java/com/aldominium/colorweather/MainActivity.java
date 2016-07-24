@@ -2,6 +2,7 @@ package com.aldominium.colorweather;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -68,8 +69,8 @@ public class MainActivity extends Activity {
                             iconImageView.setImageDrawable(currentWeather.getIconDrawableResource());
                             descriptionTextView.setText(currentWeather.getDescription());
                             currentTempTextView.setText(currentWeather.getCurrentTemperature());
-                            highestTempTextView.setText(currentWeather.getHighestTemperature());
-                            lowestTempTextView.setText(currentWeather.getLowestTemperature());
+                            highestTempTextView.setText(String.format("H: %s°",currentWeather.getHighestTemperature()));
+                            lowestTempTextView.setText(String.format("L: %s°",currentWeather.getLowestTemperature()));
 
 
 
@@ -141,11 +142,11 @@ public class MainActivity extends Activity {
 
         String icon = jsonWithCurrentWeather.getString("icon");
 
-        String temperature = jsonWithCurrentWeather.getDouble("temperature") + "";
+        String temperature = Math.round(jsonWithCurrentWeather.getDouble("temperature")) + "";
 
-        String maxTemperature = jsonWithTodayData.getDouble("temperatureMax") + "";
+        String maxTemperature = Math.round(jsonWithTodayData.getDouble("temperatureMax")) + "";
 
-        String minTemperature = jsonWithTodayData.getDouble("temperatureMin") + "";
+        String minTemperature = Math.round(jsonWithTodayData.getDouble("temperatureMin")) + "";
 
 
         CurrentWeather currentWeather = new CurrentWeather(MainActivity.this);
