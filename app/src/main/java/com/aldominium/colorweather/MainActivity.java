@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,12 @@ public class MainActivity extends Activity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
+    @BindView(R.id.iconImageView) ImageView iconImageView;
+    @BindView(R.id.descriptionTextView) TextView descriptionTextView;
+    @BindView(R.id.currentTempTextView) TextView currentTempTextView;
+    @BindView(R.id.highestTempTextView) TextView highestTempTextView;
+    @BindView(R.id.lowestTempTextView) TextView lowestTempTextView;
+
 
 
     @Override
@@ -24,7 +31,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-
+        //iconImageView;
+        descriptionTextView.setText("Sunny Day");
+        currentTempTextView.setText("19");
+        highestTempTextView.setText("H:25°");
+        lowestTempTextView.setText("L:10°");
 
 
 
