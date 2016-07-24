@@ -8,34 +8,36 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends Activity {
+
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    private TextView dailyWeatherTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        dailyWeatherTextView = (TextView) findViewById(R.id.dailyWeatherTextView);
-
-        dailyWeatherTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent dailyActivityIntent = new Intent(MainActivity.this,DailyWeatherActivity.class);
-
-                startActivity(dailyActivityIntent);
+        ButterKnife.bind(this);
 
 
-            }
-        });
 
 
 
     }
 
+
+    @OnClick(R.id.dailyWeatherTextView)
+    public void dailyWeatherClick(){
+
+        Intent dailyActivityIntent = new Intent(MainActivity.this,DailyWeatherActivity.class);
+
+        startActivity(dailyActivityIntent);
+    }
 
 
 }
