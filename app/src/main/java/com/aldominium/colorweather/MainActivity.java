@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        String url ="https://api.forecast.io/forecast/60bc1f5d441bc55a501a13b4c29d9302/37.8267,-122.423";
+        String url ="https://api.forecast.io/forecast/60bc1f5d441bc55a501a13b4c29d9302/37.8267,-122.423?units=si";
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
