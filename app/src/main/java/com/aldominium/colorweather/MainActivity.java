@@ -17,6 +17,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -114,6 +118,44 @@ public class MainActivity extends Activity {
         Intent minutelyActivityIntent = new Intent(MainActivity.this,MinutelyWeatherActivity.class);
 
         startActivity(minutelyActivityIntent);
+
+    }
+
+    private CurrentWeather getCurrentWeatherFromJson(String json)throws JSONException{
+
+        JSONObject jsonObject = new JSONObject(json);
+
+        JSONObject jsonWithCurrentWeather = jsonObject.getJSONObject("currently");
+
+        JSONObject jsonWithDailyWeather = jsonObject.getJSONObject("daily");
+
+        JSONArray jsonWithDailyWeatherData = jsonWithDailyWeather.getJSONArray("data");
+
+        JSONObject jsonWithTodayData = jsonWithDailyWeatherData.getJSONObject(0);
+
+
+        String summary = jsonWithCurrentWeather.getString("summary");
+
+        String icon = jsonWithCurrentWeather.getString("icon");
+
+        String temperature = jsonWithCurrentWeather.getDouble("temperature") + "";
+
+        String maxTemperature = jsonWithTodayData.getDouble("temperatureMax") + "";
+
+        String minTemperature = jsonWithTodayData.getDouble("temperatureMin") + "";
+
+
+        CurrentWeather currentWeather = new CurrentWeather(MainActivity.this);
+
+        currentWeather.setDescription(summary);
+        currentWeather.setIconImage(icon);
+        currentWeather.setCurrentTemperature(temperature);
+        currentWeather.setHighestTemperature(maxTemperature);
+        currentWeather.setLowestTemperature(minTemperature);
+
+        return currentWeather;
+
+
 
     }
 
