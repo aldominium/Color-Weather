@@ -10,6 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,6 +53,35 @@ public class MainActivity extends Activity {
         currentTempTextView.setText(currentWeather.getCurrentTemperature());
         highestTempTextView.setText(currentWeather.getHighestTemperature());
         lowestTempTextView.setText(currentWeather.getLowestTemperature());
+
+
+
+
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        String url ="http://www.google.com";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+
+                        Log.d(TAG,"Response is: "+ response.substring(0,500));
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d(TAG,"Eso no funciono");
+            }
+        });
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
 
 
 
