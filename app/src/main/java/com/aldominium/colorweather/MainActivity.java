@@ -33,11 +33,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        iconImageView.setImageDrawable(clearNight);
-        descriptionTextView.setText("Sunny Day");
-        currentTempTextView.setText("19");
-        highestTempTextView.setText("H:25°");
-        lowestTempTextView.setText("L:10°");
+        CurrentWeather currentWeather = new CurrentWeather(MainActivity.this);
+
+        currentWeather.setIconImage("sunny");
+        currentWeather.setDescription("Sunny Day");
+        currentWeather.setCurrentTemperature("19");
+        currentWeather.setHighestTemperature("H:25°");
+        currentWeather.setLowestTemperature("L:10°");
+
+        iconImageView.setImageDrawable(currentWeather.getIconDrawableResource());
+        descriptionTextView.setText(currentWeather.getDescription());
+        currentTempTextView.setText(currentWeather.getCurrentTemperature());
+        highestTempTextView.setText(currentWeather.getHighestTemperature());
+        lowestTempTextView.setText(currentWeather.getLowestTemperature());
 
 
 
