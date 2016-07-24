@@ -44,19 +44,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        CurrentWeather currentWeather = new CurrentWeather(MainActivity.this);
 
-        currentWeather.setIconImage("sunny");
-        currentWeather.setDescription("Sunny Day");
-        currentWeather.setCurrentTemperature("19");
-        currentWeather.setHighestTemperature("H:25°");
-        currentWeather.setLowestTemperature("L:10°");
-
-        iconImageView.setImageDrawable(currentWeather.getIconDrawableResource());
-        descriptionTextView.setText(currentWeather.getDescription());
-        currentTempTextView.setText(currentWeather.getCurrentTemperature());
-        highestTempTextView.setText(currentWeather.getHighestTemperature());
-        lowestTempTextView.setText(currentWeather.getLowestTemperature());
 
 
 
@@ -72,9 +60,24 @@ public class MainActivity extends Activity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
 
-                        Log.d(TAG,"Response is: "+ response.substring(0,500));
+
+                        try {
+                            CurrentWeather currentWeather = getCurrentWeatherFromJson(response);
+
+                            iconImageView.setImageDrawable(currentWeather.getIconDrawableResource());
+                            descriptionTextView.setText(currentWeather.getDescription());
+                            currentTempTextView.setText(currentWeather.getCurrentTemperature());
+                            highestTempTextView.setText(currentWeather.getHighestTemperature());
+                            lowestTempTextView.setText(currentWeather.getLowestTemperature());
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
                     }
                 }, new Response.ErrorListener() {
 
