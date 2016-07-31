@@ -5,6 +5,8 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
+import com.aldominium.colorweather.Adapters.DailyWeatherAdapter;
+
 import java.util.ArrayList;
 
 public class DailyWeatherActivity extends ListActivity {
@@ -14,27 +16,29 @@ public class DailyWeatherActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_weather);
 
-        ArrayList<String> daysArray = new ArrayList<String>();
+        ArrayList<Day> days = new ArrayList<Day>();
 
-        daysArray.add("Lunes");
-        daysArray.add("Martes");
-        daysArray.add("Miercoles");
-        daysArray.add("Jueves");
-        daysArray.add("Viernes");
-        daysArray.add("Sabado");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
-        daysArray.add("Domingo");
+        for(int i = 0; i < 500; i++){
 
-        ArrayAdapter<String> daysAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,daysArray);
+            Day day = new Day();
+            day.setDayName("Monday");
+            day.setWeatherDescription("It is going to rain");
+            day.setRainProbability("Rain probability 99%");
 
-        setListAdapter(daysAdapter);
+
+            days.add(day);
+
+        }
+
+
+
+        DailyWeatherAdapter dailyWeatherAdapter = new DailyWeatherAdapter(this,days);
+
+
+
+
+
+        setListAdapter(dailyWeatherAdapter);
 
 
     }
