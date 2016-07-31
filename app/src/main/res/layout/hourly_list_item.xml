@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:background="@drawable/bg_gradient_blue">
+
+    <TextView
+        style="@style/mainFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hourlyTitleTextView"
+        tools:text="19:00"
+        android:textStyle="normal|bold"/>
+
+    <TextView
+        style="@style/mainFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hourlyDescriptionTextView"
+        tools:text="Sunny"/>
+</LinearLayout>
