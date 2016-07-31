@@ -47,25 +47,48 @@ public class DailyWeatherAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-
+        ViewHolder viewHolder;
         Day day = days.get(position);
 
 
 
         if (view == null) {
-            Log.d(TAG,"Construyendo una nueva vista desde 0");
+
+            Log.d(TAG,"Creando vistas y buscando vistas");
+
             view = LayoutInflater.from(context).inflate(R.layout.daily_list_item, viewGroup,false);
+
+            viewHolder = new ViewHolder();
+
+            viewHolder.dayTitle = (TextView) view.findViewById(R.id.dailyListTitle);
+            viewHolder.dayRainProbability = (TextView) view.findViewById(R.id.dailyListProbability);
+            viewHolder.dayDescription = (TextView) view.findViewById(R.id.dailyListDescription);
+
+            view.setTag(viewHolder);
+        }else {
+
+            viewHolder = (ViewHolder) view.getTag();
+
         }
 
-        TextView dayTitle = (TextView) view.findViewById(R.id.dailyListTitle);
-        TextView dayDescription = (TextView) view.findViewById(R.id.dailyListDescription);
-        TextView dayRainProbability = (TextView) view.findViewById(R.id.dailyListProbability);
 
 
-        dayTitle.setText(day.getDayName());
-        dayDescription.setText(day.getWeatherDescription());
-        dayRainProbability.setText(day.getRainProbability());
+
+
+        viewHolder.dayTitle.setText(day.getDayName());
+        viewHolder.dayDescription.setText(day.getWeatherDescription());
+        viewHolder.dayRainProbability.setText(day.getRainProbability());
 
         return view;
+
+
+    }
+
+    static class ViewHolder{
+
+        TextView dayTitle;
+        TextView dayDescription;
+        TextView dayRainProbability;
+
     }
 }
