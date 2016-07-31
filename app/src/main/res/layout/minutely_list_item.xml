@@ -18,6 +18,6 @@
         style="@style/mainFont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/minutelyDescriptionTextView"
+        android:id="@+id/minutelyRainProbabilityTextView"
         tools:text="Rain Probability: 8%"/>
 </LinearLayout>
