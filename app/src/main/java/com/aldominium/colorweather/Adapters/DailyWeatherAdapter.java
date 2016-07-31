@@ -1,6 +1,7 @@
 package com.aldominium.colorweather.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
  */
 
 public class DailyWeatherAdapter extends BaseAdapter{
+
+    public static final String TAG = DailyWeatherAdapter.class.getSimpleName();
 
     ArrayList<Day> days;
     Context context;
@@ -47,7 +50,12 @@ public class DailyWeatherAdapter extends BaseAdapter{
 
         Day day = days.get(position);
 
-        view = LayoutInflater.from(context).inflate(R.layout.daily_list_item,null);
+
+
+        if (view == null) {
+            Log.d(TAG,"Construyendo una nueva vista desde 0");
+            view = LayoutInflater.from(context).inflate(R.layout.daily_list_item, viewGroup,false);
+        }
 
         TextView dayTitle = (TextView) view.findViewById(R.id.dailyListTitle);
         TextView dayDescription = (TextView) view.findViewById(R.id.dailyListDescription);
