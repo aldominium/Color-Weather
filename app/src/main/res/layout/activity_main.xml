@@ -10,7 +10,7 @@
     android:background="@drawable/bg_gradient_blue">
 
     <ImageView
-        android:src="@drawable/clear_day"
+        android:src="@drawable/na"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/iconImageView"
@@ -24,7 +24,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="Partly Cloudy"
+        android:text="--"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/descriptionTextView"
@@ -35,7 +35,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="19"
+        android:text="--"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/currentTempTextView"
@@ -56,7 +56,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="H:19°"
+        android:text="H:--°"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/highestTempTextView"
@@ -68,7 +68,7 @@
 
     <TextView
         style="@style/mainFont"
-        android:text="L:12°"
+        android:text="L:--°"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lowestTempTextView"
