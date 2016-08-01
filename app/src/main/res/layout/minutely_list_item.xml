@@ -4,6 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
               tools:background="@drawable/bg_gradient_blue">
 
     <TextView
@@ -16,6 +17,7 @@
 
     <TextView
         style="@style/mainFont"
+        android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/minutelyRainProbabilityTextView"
