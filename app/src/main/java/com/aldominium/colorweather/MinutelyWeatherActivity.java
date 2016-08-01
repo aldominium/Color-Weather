@@ -1,6 +1,7 @@
 package com.aldominium.colorweather;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,40 +23,10 @@ public class MinutelyWeatherActivity extends Activity {
         setContentView(R.layout.activity_minutely_weather);
         ButterKnife.bind(this);
 
-        ArrayList<Minute> minutes = new ArrayList<>();
+        Intent intent = getIntent();
 
-        Minute minute = new Minute();
-        minute.setTitle("19:55");
-        minute.setRainProbability("99%");
+        ArrayList<Minute> minutes = intent.getParcelableArrayListExtra(MainActivity.MINUTE_ARRAY_LIST);
 
-        Minute minute2 = new Minute();
-        minute2.setTitle("19:55");
-        minute2.setRainProbability("99%");
-
-        Minute minute3 = new Minute();
-        minute3.setTitle("19:55");
-        minute3.setRainProbability("99%");
-
-        Minute minute4 = new Minute();
-        minute4.setTitle("19:55");
-        minute4.setRainProbability("99%");
-
-        Minute minute5 = new Minute();
-        minute5.setTitle("19:55");
-        minute5.setRainProbability("99%");
-
-
-        Minute minute6 = new Minute();
-        minute6.setTitle("19:55");
-        minute6.setRainProbability("99%");
-
-
-        minutes.add(minute);
-        minutes.add(minute2);
-        minutes.add(minute3);
-        minutes.add(minute4);
-        minutes.add(minute5);
-        minutes.add(minute6);
 
 
 

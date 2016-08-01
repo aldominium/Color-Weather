@@ -12,6 +12,10 @@ public class Minute implements Parcelable{
     private String title;
     private String rainProbability;
 
+    public Minute(){
+
+    }
+
     protected Minute(Parcel in) {
         title = in.readString();
         rainProbability = in.readString();
