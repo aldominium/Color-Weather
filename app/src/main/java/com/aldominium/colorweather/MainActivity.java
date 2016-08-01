@@ -194,11 +194,11 @@ public class MainActivity extends Activity {
 
             JSONObject jsonWithDayData = jsonWithDailyWeatherData.getJSONObject(i);
 
-            String rainProbability = jsonWithDayData.getLong("precipProbability") + "";
+            String rainProbability = jsonWithDayData.getDouble("precipProbability") + "";
 
             String description = jsonWithDayData.getString("summary");
 
-            String dayName = dateFormat.format(jsonWithDayData.getLong("time")*1000);
+            String dayName = dateFormat.format(jsonWithDayData.getDouble("time")*1000);
 
             day.setDayName(dayName);
 
@@ -214,4 +214,48 @@ public class MainActivity extends Activity {
     }
 
 
+    public ArrayList<Hour> getHourlyWeather(String json) throws JSONException{
+
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+
+        ArrayList<Hour> hours = new ArrayList<Hour>();
+
+        JSONObject jsonObject = new JSONObject(json);
+
+        JSONObject jsonWithHourlyWeather = jsonObject.getJSONObject("hourly");
+
+        JSONArray jsonWithHourlyWeatherData = jsonWithHourlyWeather.getJSONArray("data");
+
+        for(int i = 0; i < jsonWithHourlyWeatherData.length(); i++){
+
+            Hour hour = new Hour();
+
+            JSONObject jsonWithHourData = jsonWithHourlyWeatherData.getJSONObject(i);
+
+            String title = dateFormat.format(jsonWithHourData.getDouble("time")*1000);
+
+            String description = jsonWithHourData.getString("summary");
+
+            hour.setTitle(title);
+
+            hour.setWeatherDescription(description);
+
+            hours.add(hour);
+
+        }
+
+
+
+        return hours;
+
+    }
+
 }
+
+
+
+
+
+
+
+
