@@ -3,6 +3,7 @@ package com.aldominium.colorweather;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import com.aldominium.colorweather.Adapters.DailyWeatherAdapter;
@@ -10,6 +11,8 @@ import com.aldominium.colorweather.Adapters.DailyWeatherAdapter;
 import java.util.ArrayList;
 
 public class DailyWeatherActivity extends ListActivity {
+
+    public static final String TAG = DailyWeatherAdapter.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class DailyWeatherActivity extends ListActivity {
             days.add(day);
 
         }
+
 
 
 
