@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -117,7 +118,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d(TAG,"Eso no funciono");
+                Toast.makeText(MainActivity.this,"Connnection error",Toast.LENGTH_LONG).show();
             }
         });
 
